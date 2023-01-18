@@ -1,0 +1,131 @@
+/* === GENERAL RULES === */
+.card {
+  overflow: hidden;
+  background: #fff;
+
+  display: inline-block;
+  clip-path: polygon(var(--path));
+  -webkit-clip-path: polygon(var(--path));
+
+  width: 32rem;
+  height: 48rem;
+  border: 0.4rem solid var(--border-color);
+  border-radius: 1.2rem;
+  position: relative;
+
+  padding: 2.1rem 0 0 5.1rem;
+  font-size: 1.6rem;
+  margin-bottom: 1.4rem;
+}
+
+.card::after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 0.5rem;
+  width: 15rem;
+  background: var(--border-color);
+  left: -7rem;
+  top: 3rem;
+  transform: rotate(-45deg);
+  justify-self: center;
+}
+
+.greytxt {
+  color: var(--secondary-color);
+  font-weight: 400;
+}
+
+.heading,
+.taste {
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.heading {
+  font-size: 4.8rem;
+  line-height: 5.6rem;
+  color: var(--heading-color);
+}
+
+.taste {
+  display: block;
+  font-size: 2.4rem;
+  margin-bottom: 1.5rem;
+}
+
+.image {
+  position: absolute;
+  top: 20.8rem;
+  left: -2.4rem;
+  z-index: -1;
+}
+
+.circle {
+  width: 8rem;
+  height: 8rem;
+  background-color: var(--border-color);
+  border-radius: 50%;
+  font-size: 2.1rem;
+  z-index: 999;
+  position: absolute;
+  right: 1.6rem;
+  bottom: 1.6rem;
+  text-align: center;
+  font-size: 2.1rem;
+}
+
+.weight {
+  font-size: 4.2rem;
+  padding-top: 0.6rem;
+}
+
+.unit {
+  position: absolute;
+  left: 3rem;
+  bottom: 0.8rem;
+}
+
+.description {
+  color: var(--description-color);
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.link,
+.link:visited {
+  color: var(--border-color);
+  text-decoration: underline dashed;
+}
+
+.link:hover,
+.link:active {
+  cursor: pointer;
+  color: var(--hover-color);
+}
+
+.card:hover {
+  border-color: var(--hover-color);
+  cursor: pointer;
+}
+
+.card:hover .circle {
+  background-color: var(--hover-color);
+}
+
+.card.selected {
+  --border-color: #d91667;
+  --hover-color: #e52e7a;
+}
+
+.card.out {
+  --border-color: #b3b3b3;
+  --grey-color: #b3b3b3;
+  --heading-color: #b3b3b3;
+  --hover-color: #b3b3b3;
+  cursor: not-allowed;
+}
+
+.card.out + .description {
+  --description-color: #ffff66;
+}
